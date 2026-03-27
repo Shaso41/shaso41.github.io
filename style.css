@@ -11,7 +11,7 @@ body {
 }
 
 .wrapper {
-  height: 98vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 1.5vh;
