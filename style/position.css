@@ -1,0 +1,188 @@
+/* Genel Ayarlar ve Sayfa Düzeni */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f5f7;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Fixed öğenin çalıştığını test etmek için sayfayı bilerek uzun tutuyoruz */
+    min-height: 120vh; 
+}
+
+/* 1. Etkileşimli Alan: Geri Dön Butonu (Hover & Cursor: Pointer) */
+.back-btn {
+    align-self: flex-start;
+    text-decoration: none;
+    color: white;
+    background-color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background-color: #555;
+}
+
+header h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* ====== ZORUNLU KURAL: POSITION FIXED ====== */
+/* 2. Etkileşimli Alan: Yardımcı Menü (Animasyon & Cursor: Help) */
+.fixed-helper {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    cursor: help;
+    z-index: 1000;
+    /* CSS Animasyonu Kullanımı */
+    animation: bounce 2s infinite ease-in-out; 
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* ====== ZORUNLU KURAL: POSITION RELATIVE KAPSAYICI ====== */
+.announcement-card {
+    position: relative;
+    width: 600px;
+    height: 350px;
+    background-color: #e8e6f8; /* Görsele uygun lila rengi */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    overflow: hidden; /* Dışarı taşan dekoratif yuvarlağı gizlemek için */
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+/* ====== ZORUNLU KURAL: Z-INDEX VE KART İÇERİĞİ ====== */
+/* Dekoratif Şekil (Arka planda kalması için z-index: 1) */
+.decorative-circle {
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+    width: 350px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    z-index: 1; 
+}
+
+.card-content {
+    position: relative;
+    z-index: 2; /* Dekoratif yuvarlağın üstünde okunabilmesi için z-index: 2 */
+}
+
+.card-content h2 {
+    font-size: 26px;
+    color: #2c003e;
+    margin-top: 40px;
+}
+
+.card-content p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    max-width: 80%;
+}
+
+/* ====== ZORUNLU KURAL: EN AZ 3 ADET POSITION ABSOLUTE ÖĞE ====== */
+
+/* Öğre 1: Sol Üst Etiket */
+.badge-top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #fff9c4;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    z-index: 3;
+}
+
+/* Öğe 2: Sağ Üst Etiket */
+.badge-top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    z-index: 3;
+}
+
+/* Öğe 3: Konum Kutusu */
+/* 3. Etkileşimli Alan: Konum (Hover Animasyonu & Cursor: Crosshair) */
+.location-box {
+    position: absolute;
+    bottom: 90px;
+    right: 30px;
+    background-color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 3;
+    cursor: crosshair;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition efekti */
+}
+
+.location-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Öğe 4: Kayıt Butonu (:active efekti kullanıldı) */
+.register-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffe0e0;
+    color: #d32f2f;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.register-btn:hover {
+    background-color: #ffcdd2;
+}
+
+.register-btn:active {
+    transform: scale(0.92); /* Tıklama anında küçülme efekti */
+}
+
+footer {
+    margin-top: 60px;
+    color: #888;
+    font-size: 14px;
+}

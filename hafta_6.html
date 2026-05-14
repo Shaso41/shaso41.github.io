@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafta 6 - JS Uygulamaları</title>
+    <link rel="stylesheet" href="style/hafta6.css">
+</head>
+<body>
+
+    <div style="margin-bottom: 20px;">
+        <a href="index.html" style="text-decoration: none; color: #333; font-weight: bold; background-color: #e2e4e8; padding: 8px 15px; border-radius: 5px; display: inline-block;">&larr; Ana Sayfaya Dön</a>
+    </div>
+
+    <div class="tab-buttons">
+        <button id="btnNot" class="tab-btn active" onclick="switchTab('notApp')">Not Hesaplama</button>
+        <button id="btnBirim" class="tab-btn" onclick="switchTab('birimApp')">Birim Dönüştürme</button>
+    </div>
+
+    <div id="notApp" class="app-section active-section">
+        <h2>Öğrenci Not Hesaplama</h2>
+
+        <div class="form-container">
+            <input type="text" id="adSoyad" placeholder="Ad Soyad giriniz" oninput="formatAdSoyad(this)">
+            <input type="text" id="vize" placeholder="Vize notu (0-100)">
+            <input type="text" id="final" placeholder="Final notu (0-100)">
+            <button onclick="hesapla()">Hesapla</button>
+        </div>
+
+        <div class="result-container" id="sonucAlani">
+            <h3 id="sonucAdSoyad"></h3>
+            <div class="result-item" id="sonucOrtalama"></div>
+            <div class="result-item" id="sonucHarf"></div>
+            <div class="result-item" id="sonucDurum"></div>
+        </div>
+    </div>
+
+    <div id="birimApp" class="app-section" style="display: none;">
+        <div class="birim-container">
+            <h2>Birim Dönüştürücü</h2>
+            
+            <div class="form-group">
+                <label for="inputValue">Değer Giriniz:</label>
+                <input type="number" id="inputValue" placeholder="Değer giriniz" value="50">
+            </div>
+
+            <div class="form-group">
+                <label for="conversionType">Dönüşüm Tipi:</label>
+                <select id="conversionType">
+                    <option value="m-km">Metre -> Kilometre</option>
+                    <option value="c-f" selected>Celsius -> Fahrenheit</option>
+                    <option value="kg-g">Kilogram -> Gram</option>
+                </select>
+            </div>
+
+            <button id="calculateBtn" class="btn">Hesapla</button>
+
+            <div class="birim-result-box">
+                Sonuç: <span id="resultText"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/hafta6.js"></script>
+</body>
+</html>

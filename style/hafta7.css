@@ -1,0 +1,23 @@
+/* Sayfa akışını ve geçişleri yumuşatır */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Kartların üzerine gelince hafif yukarı zıplaması */
+#cards .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Koyu Tema Düzeltmeleri */
+[data-bs-theme="dark"] #cards {
+    background-color: #212529 !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}

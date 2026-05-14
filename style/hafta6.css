@@ -1,0 +1,165 @@
+/* Genel Reset ve Body */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Tab Butonları */
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ddd;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.tab-btn:hover {
+    background-color: #ccc;
+}
+
+.tab-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Uygulama Bölümleri */
+.app-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Not Hesaplama Stilleri --- */
+#notApp h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-container input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container button {
+    padding: 12px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.form-container button:hover {
+    background-color: #218838;
+}
+
+.result-container {
+    width: 400px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border-left: 5px solid #17a2b8;
+    border-radius: 4px;
+    display: none;
+}
+
+.result-container h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.result-item {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+/* --- Birim Dönüştürücü Stilleri --- */
+.birim-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+.birim-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.birim-result-box {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
